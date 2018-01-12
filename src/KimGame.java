@@ -13,6 +13,8 @@ public class KimGame extends NumberGame {
 	private int upperBound;
 	/** the solution to the game */
 	private int secret;
+	/** count guesses */
+	private int countGuesses;
 
 	public KimGame(int upperbound) {
 		this.upperBound = upperbound;
@@ -23,6 +25,16 @@ public class KimGame extends NumberGame {
 	}
 
 	/**
+	 * Count every time that the player guesses.
+	 * 
+	 * @return the total count that the player guesses
+	 */
+	@Override
+	public int getCount() {
+		return countGuesses;
+	}
+
+	/**
 	 * Evaluate a user's guess.
 	 * 
 	 * @param number
@@ -30,13 +42,14 @@ public class KimGame extends NumberGame {
 	 * @return true if guess is correct, false otherwise
 	 */
 	public boolean guess(int number) {
+		countGuesses++;
 		if (number == secret) {
 			setMessage("Correct! The number is " + secret);
 			return true;
 		} else if (number < secret) {
-			setMessage("Your answer is too small.");
+			setMessage("Your answer is too small");
 		} else
-			setMessage("Your answer is too large.");
+			setMessage("Your answer is too large");
 		return false;
 	}
 
@@ -47,7 +60,7 @@ public class KimGame extends NumberGame {
 		else
 			return 0;
 	}
-
+	
 	@Override
 	public String toString() {
 		return "Guess a number between 1 and " + upperBound;

@@ -59,6 +59,10 @@ public class NumberGame {
 		return Integer.MAX_VALUE; // not very helpful :-)
 	}
 
+	public int getCount() {
+		return 0;
+	}
+
 	/**
 	 * toString describes the game or problem.
 	 * 
