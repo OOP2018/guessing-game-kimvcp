@@ -15,7 +15,12 @@ public class KimGame extends NumberGame {
 	private int secret;
 	/** count guesses */
 	private int countGuesses;
-
+	
+	/**
+	 * Constructor for creating object.
+	 * 
+	 * @param the maximum value.
+	 */
 	public KimGame(int upperbound) {
 		this.upperBound = upperbound;
 		long seed = System.nanoTime();

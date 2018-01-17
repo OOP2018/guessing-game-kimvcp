@@ -3,6 +3,9 @@ import java.util.Scanner;
 
 /**
  * Automatically find the secret to any NumberGame.
+ * 
+ * @author Vichaphol Thamsuthikul
+ * @version 2018.01.17
  */
 public class GameSolver {
 	/**
@@ -12,7 +15,7 @@ public class GameSolver {
 	 * 
 	 * @param game
 	 *            is the NumberGame to solve
-	 * @return
+	 * @return the secret value
 	 */
 	public int play(NumberGame game) {
 		Random random = new Random();
