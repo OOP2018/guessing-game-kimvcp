@@ -19,24 +19,21 @@ public class GameSolver {
 	 */
 	public int play(NumberGame game) {
 		Random random = new Random();
-		int half = game.getUpperBound()/2;
-		int quad = half / 2;
+		int max = game.getUpperBound();
+		int min = 1;
+		int guess = (max - min) / 2;
 		while (true) {
-			System.out.println(game.getMessage());
-			System.out.println(half);
-			boolean correct = game.guess(half);
+			boolean correct = game.guess(guess);
 			if (correct)
-				return half;
+				return guess;
 			if (game.getMessage().contains("large")) {
-				half -= quad;
-
+				max = guess;
+				guess -= (max - min) / 2;
 			} else if (game.getMessage().contains("small")) {
-				half += quad;
+				min = guess;
+				guess += (max - min) / 2;
 			}
-			if (quad  > 1) {
-				quad = quad / 2;
-			}
-		}
 
+		}
 	}
 }

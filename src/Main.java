@@ -9,7 +9,9 @@ public class Main {
 		NumberGame game = new KimGame(upperBound);
 		GameSolver ui = new GameSolver();
 		int solution = ui.play(game);
-		System.out.println("Correct! the answer is " + solution);
-		System.out.println("Count: "+game.getCount());
+		System.out.println(game);
+		System.out.println("Game solver will find the solution.");
+		System.out.println("The solution is " + solution);
+		System.out.println("Total tries: "+game.getCount());
 	}
 }
