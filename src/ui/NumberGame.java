@@ -1,4 +1,6 @@
+package ui;
 import java.util.ArrayList;
+import java.util.Observable;
 
 /**
  * The base class for all number games. Your guessing game should extend this
@@ -7,7 +9,7 @@ import java.util.ArrayList;
  * Your class should not override getMessage() and setMessage(), just use the
  * methods from this class.
  */
-public class NumberGame {
+public class NumberGame extends Observable {
 	/** A helpful message for user. */
 	private String message;
 

@@ -1,3 +1,4 @@
+package ui;
 import java.util.Random;
 
 /**
@@ -11,10 +12,8 @@ public class SampleGame extends NumberGame {
 	private int upperBound;
 	/** the solution to the game */
 	private int secret;
-
 	/** count guesses */
 	private int countGuesses;
-
 	/** Initialize a new default game. */
 	public SampleGame() {
 		this(100);
