@@ -18,7 +18,7 @@ import javafx.stage.Stage;
  * @author Vichaphol Thamsuthikul
  *
  */
-public class CounterView implements java.util.Observer {
+public class HistoryView implements java.util.Observer {
 	/** the stage (top-level window) for showing scene */
 	private Stage stage;
 	/** a counter to show value of */
@@ -32,7 +32,7 @@ public class CounterView implements java.util.Observer {
 	 * @param counter
 	 *            the Counter to show.
 	 */
-	public CounterView(NumberGame game) {
+	public HistoryView(NumberGame game) {
 		this.game = game;
 		initComponents();
 	}
@@ -43,13 +43,14 @@ public class CounterView implements java.util.Observer {
 		root.setPadding(new Insets(10));
 		root.setAlignment(Pos.CENTER);
 		label = new Label("   ");
-		label.setPrefWidth(275);
-		label.setFont(new Font("Arial", 80.0));
+		label.setPrefWidth(400);
+		label.setPrefHeight(250);
+		label.setFont(new Font("Arial", 20.0));
 		label.setAlignment(Pos.CENTER);
 		root.getChildren().add(label);
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
-		stage.setTitle("Guess Count");
+		stage.setTitle("History");
 		stage.sizeToScene();
 	}
 
@@ -60,7 +61,7 @@ public class CounterView implements java.util.Observer {
 	}
 
 	public void displayCount() {
-		label.setText(String.format("%2d", game.getCount()));
+		label.setText(String.format("%s", game.getMessage()));
 	}
 
 	@Override

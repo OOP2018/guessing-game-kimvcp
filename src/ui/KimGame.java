@@ -1,4 +1,5 @@
 package ui;
+
 import java.util.Random;
 
 import com.sun.corba.se.impl.protocol.giopmsgheaders.Message;
@@ -16,18 +17,20 @@ public class KimGame extends NumberGame {
 	private int secret;
 	/** count guesses */
 	private int countGuesses;
-	
+
 	/**
 	 * Constructor for creating object.
 	 * 
-	 * @param the maximum value.
+	 * @param the
+	 *            maximum value.
 	 */
 	public KimGame(int upperbound) {
 		this.upperBound = upperbound;
 		long seed = System.nanoTime();
 		Random randomNumber = new Random(seed);
 		this.secret = randomNumber.nextInt(upperbound) + 1;
-		super.setMessage("I'm thinking of a number between 1 and " + upperbound);
+		super.setMessage("I'm thinking of a number between 1 and " + upperbound );
+		
 	}
 
 	/**
@@ -49,14 +52,20 @@ public class KimGame extends NumberGame {
 	 */
 	public boolean guess(int number) {
 		countGuesses++;
+		boolean condition = false;
 		if (number == secret) {
 			setMessage("Correct! The number is " + secret);
-			return true;
-		} else if (number < secret) {
+			condition = true;
+		}
+		if (number < secret) {
 			setMessage("Your answer is too small");
-		} else
+		} else {
 			setMessage("Your answer is too large");
-		return false;
+		}
+		setChanged();
+		notifyObservers();
+		return condition;
+
 	}
 
 	/** Get the game upper bound. */
@@ -66,7 +75,7 @@ public class KimGame extends NumberGame {
 		else
 			return 0;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Guess a number between 1 and " + upperBound;

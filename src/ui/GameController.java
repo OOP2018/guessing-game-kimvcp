@@ -18,21 +18,17 @@ public class GameController extends NumberGame {
 
 	private NumberGame game;
 
-	public GameController() {
-		game = new KimGame(100);
-
-	}
+	private int guessingNumber;
 
 	public void setGame(NumberGame game) {
 		this.game = game;
 	}
 
 	public void handleGuess(ActionEvent event) {
-		int guessingNumber = 0;
 		try {
 			guessingNumber = Integer.parseInt(textfield1.getText());
 		} catch (NumberFormatException e) {
-			System.out.print("Input should be a number");
+			label.setText("Input should be a number.");
 			return;
 		}
 		try {
@@ -47,6 +43,10 @@ public class GameController extends NumberGame {
 		}
 		textfield1.clear();
 
+	}
+
+	public int getGuessingNumber() {
+		return guessingNumber;
 	}
 
 }
