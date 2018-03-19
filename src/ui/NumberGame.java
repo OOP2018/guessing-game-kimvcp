@@ -9,7 +9,7 @@ import java.util.Observable;
  * Your class should not override getMessage() and setMessage(), just use the
  * methods from this class.
  */
-public abstract class NumberGame extends Observable {
+public class NumberGame extends Observable {
 	/** A helpful message for user. */
 	private String message;
 
@@ -27,7 +27,6 @@ public abstract class NumberGame extends Observable {
 	 * @return true if correct, false otherwise
 	 */
 	public boolean guess(int answer) {
-		// TODO your subclass should override this method
 		message = "Sorry, that's not correct";
 		return false;
 	}

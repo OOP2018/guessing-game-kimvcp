@@ -29,8 +29,8 @@ public class KimGame extends NumberGame {
 		long seed = System.nanoTime();
 		Random randomNumber = new Random(seed);
 		this.secret = randomNumber.nextInt(upperbound) + 1;
-		super.setMessage("I'm thinking of a number between 1 and " + upperbound );
-		
+		super.setMessage("I'm thinking of a number between 1 and " + upperbound);
+
 	}
 
 	/**
@@ -58,9 +58,9 @@ public class KimGame extends NumberGame {
 			condition = true;
 		}
 		if (number < secret) {
-			setMessage("Your answer is too small");
+			setMessage("Your answer is " + number + " (too small)");
 		} else {
-			setMessage("Your answer is too large");
+			setMessage("Your answer is " + number + " (too large)");
 		}
 		setChanged();
 		notifyObservers();

@@ -25,6 +25,8 @@ public class HistoryView implements java.util.Observer {
 	private NumberGame game;
 	/** the label that shows the counter value. */
 	private Label label;
+	/** message set to label*/
+	private String message = "";
 
 	/**
 	 * Initialize a CounterView, which shows value of a counter.
@@ -61,7 +63,8 @@ public class HistoryView implements java.util.Observer {
 	}
 
 	public void displayCount() {
-		label.setText(String.format("%s", game.getMessage()));
+		message = message.concat("\n" + game.getMessage());
+		label.setText(String.format("%s", message));
 	}
 
 	@Override

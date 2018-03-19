@@ -9,6 +9,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+/**
+ * Controller for the Counter buttons user interface.
+ * 
+ * @author Vichaphol Thamsuthikul
+ *
+ */
 public class GameController extends NumberGame {
 
 	@FXML
@@ -18,17 +24,17 @@ public class GameController extends NumberGame {
 
 	private NumberGame game;
 
-	private int guessingNumber;
-
 	public void setGame(NumberGame game) {
 		this.game = game;
 	}
 
 	public void handleGuess(ActionEvent event) {
+		int guessingNumber;
 		try {
 			guessingNumber = Integer.parseInt(textfield1.getText());
 		} catch (NumberFormatException e) {
 			label.setText("Input should be a number.");
+			textfield1.clear();
 			return;
 		}
 		try {
@@ -43,10 +49,6 @@ public class GameController extends NumberGame {
 		}
 		textfield1.clear();
 
-	}
-
-	public int getGuessingNumber() {
-		return guessingNumber;
 	}
 
 }
