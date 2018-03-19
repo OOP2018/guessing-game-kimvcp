@@ -11,7 +11,7 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 /**
- * A Controller for a window that shows the value of a Counter. This has only
+ * A Controller for a window that shows the history of a Counter. This has only
  * one component (but you can add more components), so write it in code instead
  * of FXML.
  * 
